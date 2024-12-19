@@ -48,7 +48,7 @@ module.exports = function(app) {
         return res.send(err1.message, 500);
       }
       if (!check) {
-        return res.send('Error: No existing check with id ' + req.body.checkId, 403);
+        return res.send('Error: No existing check with provided id', 403);
       }
       if (!check.needsPoll) {
         return res.send('Error: This check was already polled. No ping was created', 403);
